@@ -3,13 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
-use Laravel\Sanctum\HasApiTokens;
-use Jenssegers\Mongodb\Eloquent\SoftDeletes;
+use MongoDB\Laravel\Eloquent\Model as Eloquent;
+use MongoDB\Laravel\Eloquent\SoftDeletes;
 
 
 
 class Province extends Eloquent
 {
-    use SoftDeletes, HasApiTokens, HasFactory;
+    use SoftDeletes, HasFactory;
 }

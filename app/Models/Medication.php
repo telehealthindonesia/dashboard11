@@ -3,11 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Jenssegers\Mongodb\Eloquent\Model;
-use Jenssegers\Mongodb\Eloquent\SoftDeletes;
-use Laravel\Sanctum\HasApiTokens;
+use MongoDB\Laravel\Eloquent\Model as Eloquent;
+use MongoDB\Laravel\Eloquent\SoftDeletes;
 
-class Medication extends Model
+class Medication extends Eloquent
 {
     use HasFactory, HasApiTokens,SoftDeletes;
     protected $connection   = 'mongodb';

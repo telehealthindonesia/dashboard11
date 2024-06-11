@@ -3,9 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use MongoDB\Laravel\Eloquent\Model as Eloquent;
+use MongoDB\Laravel\Eloquent\SoftDeletes;
 
-class City extends Model
+class City extends Eloquent
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
+    protected $connection   = 'mongodb';
+    protected $primaryKey   = '_id';
+    protected $dates        = ['deleted_at'];
+    protected $guarded      = [];
 }

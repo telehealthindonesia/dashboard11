@@ -3,13 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
-use Jenssegers\Mongodb\Eloquent\SoftDeletes;
-use Laravel\Sanctum\HasApiTokens;
+use MongoDB\Laravel\Eloquent\Model as Eloquent;
+use MongoDB\Laravel\Eloquent\SoftDeletes;
 
-class PayoutTable extends Eloquent 
+class PayoutTable extends Eloquent
 {
-    use HasFactory, HasApiTokens,SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     public $timestamps = false;
     public static function boot()

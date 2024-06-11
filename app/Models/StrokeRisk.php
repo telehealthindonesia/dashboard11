@@ -3,13 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Jenssegers\Mongodb\Eloquent\Model;
-use Jenssegers\Mongodb\Eloquent\SoftDeletes;
-use Laravel\Sanctum\HasApiTokens;
-
-class StrokeRisk extends Model
+use MongoDB\Laravel\Eloquent\Model as Eloquent;
+use MongoDB\Laravel\Eloquent\SoftDeletes;
+class StrokeRisk extends Eloquent
 {
-    use HasFactory, HasApiTokens,SoftDeletes;
+    use HasFactory, SoftDeletes;
     protected $connection   = 'mongodb';
     protected $primaryKey   = '_id';
     protected $dates        = ['deleted_at'];
