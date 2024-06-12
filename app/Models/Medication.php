@@ -8,7 +8,7 @@ use MongoDB\Laravel\Eloquent\SoftDeletes;
 
 class Medication extends Eloquent
 {
-    use HasFactory, HasApiTokens,SoftDeletes;
+    use HasFactory, SoftDeletes;
     protected $connection   = 'mongodb';
     protected $primaryKey   = '_id';
     protected $dates        = ['deleted_at'];
