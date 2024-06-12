@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\Observation;
+use App\Models\Education;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class ObservationPolicy
+class EducationPolicy
 {
     use HandlesAuthorization;
 
@@ -18,19 +18,19 @@ class ObservationPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->is_super_admin === true;
+        //
     }
 
     /**
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Observation  $observation
+     * @param  \App\Models\Education  $education
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Observation $observation)
+    public function view(User $user, Education $education)
     {
-        return $user->is_super_admin === true;
+        //
     }
 
     /**
@@ -48,10 +48,10 @@ class ObservationPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Observation  $observation
+     * @param  \App\Models\Education  $education
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Observation $observation)
+    public function update(User $user, Education $education)
     {
         //
     }
@@ -60,10 +60,10 @@ class ObservationPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Observation  $observation
+     * @param  \App\Models\Education  $education
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Observation $observation)
+    public function delete(User $user, Education $education)
     {
         //
     }
@@ -72,10 +72,10 @@ class ObservationPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Observation  $observation
+     * @param  \App\Models\Education  $education
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Observation $observation)
+    public function restore(User $user, Education $education)
     {
         //
     }
@@ -84,10 +84,10 @@ class ObservationPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Observation  $observation
+     * @param  \App\Models\Education  $education
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Observation $observation)
+    public function forceDelete(User $user, Education $education)
     {
         //
     }

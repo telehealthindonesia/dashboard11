@@ -2,23 +2,33 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use App\Policies\OauthClientPolicy;
+use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
 {
     /**
-     * Register services.
+     * The model to policy mappings for the application.
+     *
+     * @var array<class-string, class-string>
      */
-    public function register(): void
-    {
-        //
-    }
+    protected $policies = [
+        'App\Models\Observation' => 'App\Policies\ObservationPolicy',
+        'App\Models\User' => 'App\Policies\UserPolicy',
+        'App\Models\OauthClient' => 'App\Policies\OauthClientPolicy'
+    ];
 
     /**
-     * Bootstrap services.
+     * Register any authentication / authorization services.
+     *
+     * @return void
      */
-    public function boot(): void
+    public function boot()
     {
+        $this->registerPolicies();
+        Gate::define('view', [OauthClientPolicy::class, 'view']);
+
         //
     }
 }
