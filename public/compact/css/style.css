@@ -3246,6 +3246,7 @@ ul.project-list li strong {
   font-style: italic;
 }
 .wpcf7-form input[type=text],
+.wpcf7-form input[type=number],
 .wpcf7-form input[type=email],
 .wpcf7-form input[type=password],
 .wpcf7-form textarea {

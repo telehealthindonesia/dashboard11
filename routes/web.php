@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\LandingController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Web\AdmissionController;
@@ -52,8 +53,14 @@ use App\Http\Controllers\Web\ZoomMasterController;
 //Route::get('/', function () {
 //    return view('welcome');
 //})->name('home');
-Route::get('/', [AuthController::class, 'index'])->name('home')->middleware('guest');
-Route::get('/landing', [AuthController::class, 'landing'])->name('landing')->middleware('guest');
+Route::get('/', [LandingController::class, 'home'])->name('landing.home')->middleware('guest');
+Route::get('/about', [LandingController::class, 'about'])->name('landing.about')->middleware('guest');
+Route::get('/vaccine', [LandingController::class, 'siglePage'])->name('landing.singlePage')->middleware('guest');
+Route::get('/contact', [LandingController::class, 'contact'])->name('landing.contact')->middleware('guest');
+Route::get('/news', [LandingController::class, 'news'])->name('landing.news')->middleware('guest');
+Route::get('/faq', [LandingController::class, 'faq'])->name('landing.faq')->middleware('guest');
+Route::get('/remove', [LandingController::class, 'removeAllSession'])->name('landing.remove')->middleware('guest');
+
 Route::get('/login/phone', [AuthController::class, 'login_phone'])->name('auth.login.phone')->middleware('guest');
 Route::post('/postLoginPhone', [AuthController::class, 'postLoginPhone'])->name('auth.postLoginPhone');
 Route::get('/login/phone/otp', [AuthController::class, 'login_phone_otp'])->name('auth.login.phone.otp')->middleware('guest');

@@ -22,7 +22,7 @@ class AuthController extends Controller
     public function landing()
     {
         $user = Auth::user();
-        return view('layout.landing');
+        return view('landing.about');
     }
     public function login(Request $request)
     {

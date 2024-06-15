@@ -61,93 +61,17 @@
                         <!-- desktop menu begin -->
                         <nav id="desktop-menu" class="site-desktop-menu hidden-xs hidden-sm">
                             <ul class="clearfix">
-                                <li class="active"><a href="index.html">Home</a>
-                                    <ul>
-                                        <li><a href="index.html">Homepage 1</a></li>
-                                        <li><a href="index2.html">Homepage 2</a></li>
-                                        <li><a href="index3.html">Homepage 3</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Features</a>
-                                    <ul>
-                                        <li><a href="comingsoon.html">Coming Soon</a></li>
-                                        <li><a href="404.html">404 Error</a></li>
-                                        <li><a href="#">Sub Headers</a>
-                                            <ul>
-                                                <li><a href="sub-header.html">Sub Header 1</a></li>
-                                                <li><a href="sub-header1.html">Sub Header 2</a></li>
-                                                <li><a href="sub-header2.html">Sub Header 3</a></li>
-                                                <li><a href="sub-header3.html">Sub Header 4</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">3rd Level Menu</a>
-                                            <ul>
-                                                <li><a href="#">Sub link 1</a></li>
-                                                <li><a href="#">Sub link 2</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Pages</a>
-                                    <ul>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="service.html">Services</a></li>
-                                        <li><a href="pricing.html">Pricing Tables</a></li>
-                                        <li><a href="typography.html">Typography</a></li>
-                                        <li><a href="element.html">Elements</a></li>
-                                        <li><a href="faqs.html">FAQs</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="projects.html">Portfolios</a>
-                                    <ul>
-                                        <li><a href="projects-3-cols.html">Portfolio 3 Columns</a></li>
-                                        <li><a href="projects-4-cols.html">Portfolio 4 Columns</a></li>
-                                        <li><a href="projects-5-cols.html">Portfolio 5 Columns</a></li>
-                                        <li><a href="project-detail.html">Single Project</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Shop</a>
-                                    <ul>
-                                        <li><a href="shop-catalog.html">Online Store Catalog</a></li>
-                                        <li><a href="shop-cart.html">Online Store Shopping Cart</a></li>
-                                        <li><a href="shop-checkout.html">Online Store Checkout</a></li>
-                                        <li><a href="shop-single.html">Single Store Product</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="blog.html">Blog</a>
-                                    <ul>
-                                        <li><a href="blog-list.html">Blog List</a></li>
-                                        <li><a href="blog-grid.html">Blog Grid</a></li>
-                                        <li><a href="blog-single.html">Blog Article</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Contact Us</a>
-                                    <ul>
-                                        <li><a href="contact1.html">Contact Us 01</a></li>
-                                        <li><a href="contact2.html">Contact Us 02</a></li>
-                                        <li><a href="contact3.html">Contact Us 03</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="{{ route('landing.home') }}">Home</a></li>
+                                <li><a href="{{ route('landing.about') }}">About</a></li>
+                                <li><a href="{{ route('landing.news') }}">Article</a></li>
+                                <li><a href="{{ route('landing.faq') }}">FAQ</a></li>
+                                <li><a href="{{ route('landing.contact') }}">Contact Us</a></li>
                             </ul>
                         </nav>
                         <!-- desktop menu close -->
 
                         <!-- Header Group Button Right begin -->
                         <div class="header-buttons pull-right hidden-xs hidden-sm">
-
-                            <div class="header-contact">
-                                <ul class="clearfix">
-                                    <li class="phone"><i class="fa fa-phone"></i> <span>0112-826-2789</span></li>
-                                    <li class="border-line">|</li>
-                                </ul>
-                            </div>
-
-                            <!-- Button Modal popup searchbox -->
-                            <div class="search-button">
-                                <!-- Trigger the modal with a button -->
-                                <a href="" data-toggle="modal" data-target="#myModal"><i class="fa fa-search"></i></a>
-                            </div>
-
                             <!-- Top Cart -->
                             <div class="cart-button">
                                 <a href="#" class="dropdown-toggle cart-contents" data-toggle="dropdown" ><i class="fa fa-shopping-bag"></i> <span class="mini-cart-counter">3</span></a>
@@ -249,213 +173,8 @@
         </div>
     </div>
     <!-- Menu OffCanvas right close -->
+    @yield('content')
 
-    <!-- content begin -->
-    <div id="content" class="no-padding">
-
-        <!-- section begin -->
-        <section id="about-intro">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="about-text-intro text-center">
-                            <h2>About Compact</h2>
-                            <p>We’re help your vulputate bibendum justo sed, tincidunt quisque dictum eget dolor vel maximus.</p>
-                        </div>
-                        <div class="box-intro-video">
-                            <div id="overlay-video" class="overlay-video-intro">
-                                <img alt="" src="{{ asset('compact') }}/images/about/intro-video.jpg" class="img-responsive" />
-                                <a href="https://www.youtube.com/embed/keDneypw3HY?autoplay=1" class="btn-intro-video"><i class="fa fa-play"></i></a>
-                            </div>
-                            <div id="thevideo" style="display:none">
-                                <iframe id="someFrame" width="750" height="422" src="" frameborder="0" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- section close -->
-
-        <!-- section begin -->
-        <section id="section-about" class="margin-top-80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <h5>We are Compact</h5>
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed quis neque rutrum, dignissim libero vitae, ullamcorper diam. Donec eros massa, cursus eu risus nec, tempus aliquam odio. Proin lacinia urna ac ex euismod imperdiet.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <h5>What We Do?</h5>
-                        <p>Sed dui nisi, feugiat ac dictum sed, feugiat vel sem. Ut elementum nisl sit amet metus fermentum, nec ultricies ipsum accumsan. Sed eget molestie lectus. Fusce egestas at lorem ac semper. Curabitur  vehicula vitae ipsum eu pulvinar. Cras egestas eros sed</p>
-                    </div>
-                    <div class="col-md-4">
-                        <h5>Why Choose Us?</h5>
-                        <p>Lectus volutpat, sed malesuada ligula blandit. Pellentesque consequat dui sit amet quam tincidunt dapibus. Etiam sapien magna, maximus eu sagittis nec, fringilla et ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- section close -->
-
-        <!-- section begin -->
-        <section id="section-team" class="bg-grey">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="text-center">
-                            <h2>The Great Team</h2>
-                            <div class="tiny-border"></div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="team-box">
-                            <div class="team-inner">
-                                <img src="{{ asset('compact') }}/images/team/thumb-1.png" alt="" class="img-circle">
-                                <div class="mask"></div>
-                                <ul class="team-social-list">
-                                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                </ul>
-                            </div>
-                            <h6>Peter Hart</h6>
-                            <div class="subtext">Creative Director</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="team-box">
-                            <div class="team-inner">
-                                <img src="{{ asset('compact') }}/images/team/thumb-2.png" alt="" class="img-circle">
-                                <div class="mask"></div>
-                                <ul class="team-social-list">
-                                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                </ul>
-                            </div>
-                            <h6>Betty Lane</h6>
-                            <div class="subtext">Marketing Manager</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="team-box">
-                            <div class="team-inner">
-                                <img src="{{ asset('compact') }}/images/team/thumb-3.png" alt="" class="img-circle">
-                                <div class="mask"></div>
-                                <ul class="team-social-list">
-                                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                </ul>
-                            </div>
-                            <h6>Richard Pierce</h6>
-                            <div class="subtext">Risk Analyst</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="team-box">
-                            <div class="team-inner">
-                                <img src="{{ asset('compact') }}/images/team/thumb-4.png" alt="" class="img-circle">
-                                <div class="mask"></div>
-                                <ul class="team-social-list">
-                                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                </ul>
-                            </div>
-                            <h6>Janice Rose</h6>
-                            <div class="subtext">Accountant</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- section close -->
-
-        <!-- section begin -->
-        <section id="section-testimonial">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
-                        <div class="testimonials-slider-wrapper">
-                            <div class="text-center">
-                                <h2>Testimonials</h2>
-                                <div class="tiny-border"></div>
-                            </div>
-
-                            <div class="testimonials-slider-2 text-center">
-                                <div class="item">
-                                    <div class="testi-boxes">
-                                        <div class="testi-info clearfix">
-                                            <img alt="" src="{{ asset('compact') }}/images/testimonial/thumb-1.png" class="img-circle">
-                                            <div class="testi-details">
-                                                <span>Cheryl Cruz</span>
-                                                Maketing Manager
-                                            </div>
-                                        </div>
-                                        <blockquote>
-                                            Morbi auctor vel mauris facilisis lacinia. Aenean suscipit lorem leo, et hendrerit odio fermentum et. Donec ac dolor eros. Mauris arcu nunc, iaculis sit amet lacus iaculis, faucibus faucibus nunc. Vestibulum sit amet lacinia massa
-                                        </blockquote>
-
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="testi-boxes">
-                                        <div class=" testi-info clearfix">
-                                            <img alt="" src="{{ asset('compact') }}/images/testimonial/thumb-2.png" class="img-circle">
-                                            <div class="testi-details">
-                                                <span>John Walker</span>
-                                                Developent
-                                            </div>
-                                        </div>
-                                        <blockquote>
-                                            Morbi auctor vel mauris facilisis lacinia. Aenean suscipit lorem leo, et hendrerit odio fermentum et. Donec ac dolor eros. Mauris arcu nunc, iaculis sit amet lacus iaculis, faucibus faucibus nunc. Vestibulum sit amet lacinia massa
-                                        </blockquote>
-
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="testi-boxes">
-                                        <div class="testi-info clearfix">
-                                            <img alt="" src="{{ asset('compact') }}/images/testimonial/thumb-3.png" class="img-circle">
-                                            <div class="testi-details">
-                                                <span>Frank Furius</span>
-                                                Art Director
-                                            </div>
-                                        </div>
-                                        <blockquote>
-                                            Morbi auctor vel mauris facilisis lacinia. Aenean suscipit lorem leo, et hendrerit odio fermentum et. Donec ac dolor eros. Mauris arcu nunc, iaculis sit amet lacus iaculis, faucibus faucibus nunc. Vestibulum sit amet lacinia massa
-                                        </blockquote>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- section close -->
-
-        <!-- section begin -->
-        <section id="section-cta">
-            <div class="sep-background-mask"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="cal-to-action text-center">
-                            <span>We’ve Completed More Than <b>100+</b> project for our amazing clients, If you interested?</span>
-                            <a href="#" class="btn btn-border-light">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- section close -->
-
-    </div>
-    <!-- content close -->
 
     <!-- footer begin -->
     <footer class="footer-1 bg-color-1">
@@ -506,13 +225,21 @@
                             </div>
                         </div>
                     </div>
+                    @php
+                        use Illuminate\Support\Facades\Session;
+
+                        if(empty(Session::get('myKey'))){
+                            Session::put('myKey', uniqid().rand());
+                        }
+                        $myKey = Session::get('myKey');
+                    @endphp
 
                     <div class="col-md-3">
                         <div class="compact-widget">
                             <h3 class="widget-title">Newsletter</h3>
                             <div class="widget-inner">
                                 <div class="newsletter newsletter-widget">
-                                    <p>Stay informed about our news and events</p>
+                                    <p>{{ $myKey }}</p>
                                     <form action="" method="post">
                                         <p><input class="newsletter-email" type="email" name="email" placeholder="Your email"><i class="fa fa-envelope-o"></i></p>
                                         <p><input class="newsletter-submit" type="submit" value="Subscribe"></p>
@@ -558,16 +285,55 @@
 
 <!-- Waypoints-->
 <script src="{{ asset('compact/js/jquery.waypoints.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('compact/js/visible.min.js') }}"></script>
 <script src="{{ asset('compact/js/sticky.min.js') }}"></script>
 <script src="{{ asset('compact/js/compact.js') }}"></script>
 <script src="{{ asset('compact/js/about.js') }}"></script>
+<script src="{{ asset('compact/js/custom-index1.js') }}"></script>
+<script type="text/javascript">
+    /* Portfolio Sorting */
+    jQuery(document).ready(function($){
+        $(".project-slider").owlCarousel({
+            singleItem: true,
+            lazyLoad: true,
+            navigation: true,
+            autoPlay : true,
+            navigationText: [
+                "<i class='fa fa-chevron-left'></i>",
+                "<i class='fa fa-chevron-right'></i>"
+            ],
+            slideSpeed : 400,
+        });
+        $("#related-projects").owlCarousel({
+            items: 4,
+            itemsCustom : false,
+            itemsDesktop : [1199, 3],
+            itemsDesktopSmall : [979, 2],
+            itemsTablet : [768, 2],
+            itemsTabletSmall : false,
+            itemsMobile : [479, 1],
+            navigation: true,
+            pagination: false,
+            navigationText: [
+                "<i class='fa fa-angle-left'></i>",
+                "<i class='fa fa-angle-right'></i>"
+            ],
+        });
+    } )(jQuery);
+</script>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvpnlHRidMIU374bKM5-sx8ruc01OvDjI"></script>
+<script type="text/javascript" src="{{ asset('compact/js/contact.js') }}"></script>
+
+<script src="{{ asset('compact/js/smk-accordion.js') }}"></script>
+<script src="{{ asset('compact/js/custom-element.js') }}"></script>
 
 <script src="{{ asset('compact/switcher/demo.js') }}"></script>
 <div id="switcher">
     <span class="custom-close"></span>
     <span class="custom-show"></span>
 
-    <a class="btn btn-primary width" href="http://themeforest.net/item/compact-corporate-multipurpose-html-template/15611670?license=regular&open_purchase_for_item_id=15611670&purchasable=source&redirect_back=true">Buy Now</a>
+    <a class="btn btn-primary width" href="#">Buy Now</a>
 
     <div class="clearfix"></div>
 
