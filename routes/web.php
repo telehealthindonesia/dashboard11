@@ -53,6 +53,7 @@ use App\Http\Controllers\Web\ZoomMasterController;
 //    return view('welcome');
 //})->name('home');
 Route::get('/', [AuthController::class, 'index'])->name('home')->middleware('guest');
+Route::get('/landing', [AuthController::class, 'landing'])->name('landing')->middleware('guest');
 Route::get('/login/phone', [AuthController::class, 'login_phone'])->name('auth.login.phone')->middleware('guest');
 Route::post('/postLoginPhone', [AuthController::class, 'postLoginPhone'])->name('auth.postLoginPhone');
 Route::get('/login/phone/otp', [AuthController::class, 'login_phone_otp'])->name('auth.login.phone.otp')->middleware('guest');

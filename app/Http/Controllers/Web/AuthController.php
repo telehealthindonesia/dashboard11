@@ -19,6 +19,11 @@ class AuthController extends Controller
         $user = Auth::user();
         return view('auth.login');
     }
+    public function landing()
+    {
+        $user = Auth::user();
+        return view('layout.landing');
+    }
     public function login(Request $request)
     {
         $user = Auth::user();
