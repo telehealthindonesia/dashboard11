@@ -8,9 +8,7 @@
         "php": "^8.2",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
-        "maatwebsite/excel": "^1.1",
         "mongodb/laravel-mongodb": "^4.4",
-        "phpoffice/phpspreadsheet": "^2.1",
         "yaza/laravel-repository-service": "^5.0"
     },
     "require-dev": {
