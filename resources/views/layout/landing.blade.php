@@ -71,6 +71,18 @@
 
                         <!-- Header Group Button Right begin -->
                         <div class="header-buttons pull-right hidden-xs hidden-sm">
+                            @php
+                            $auth = \Illuminate\Support\Facades\Auth::user()
+                            @endphp
+                            @if(!empty($auth))
+                            <div class="navright-button">
+                                <a href="{{ route('landing.member') }}"><i class="fa fa-user"></i></a>
+                            </div>
+                            @else
+                                <div class="navright-button">
+                                    <a href="{{ route('auth.login') }}"><i class="fa fa-lock"></i></a>
+                                </div>
+                            @endif
                             <!-- Top Cart -->
                             <div class="cart-button">
                                 <a href="#" class="dropdown-toggle cart-contents" data-toggle="dropdown" ><i class="fa fa-shopping-bag"></i> <span class="mini-cart-counter">3</span></a>
@@ -125,6 +137,7 @@
                             <div class="navright-button">
                                 <a href="" id="btn-offcanvas-menu"><i class="fa fa-bars"></i></a>
                             </div>
+
 
                         </div>
                         <!-- Header Group Button Right close -->
@@ -332,56 +345,6 @@
 <script type="text/javascript" src="{{ asset('compact/rs-plugin/js/jquery.themepunch.revolution.min.js') }}"></script>
 <script src="{{ asset('compact/js/revslider-custom.js') }}"></script>
 
-
-<script src="{{ asset('compact/switcher/demo.js') }}"></script>
-<div id="switcher">
-    <span class="custom-close"></span>
-    <span class="custom-show"></span>
-
-    <a class="btn btn-primary width" href="https://rspon.co.id">Buy Now</a>
-
-    <div class="clearfix"></div>
-
-    <span class="sw-title">Layout Style</span>
-    <select name="switcher" id="tm-layout-switch">
-        <option value="wide" selected="selected">Wide</option>
-        <option value="boxed">Boxed</option>
-    </select>
-    <div class="clearfix spacing-10"></div>
-
-    <span class="sw-title">Boxed Background</span>
-    <ul id="tm-boxed-bg">
-        <li class="bg1" data-value="01"></li>
-        <li class="bg2" data-value="02"></li>
-        <li class="bg3" data-value="03"></li>
-        <li class="bg4" data-value="04"></li>
-        <li class="bg5" data-value="05"></li>
-        <li class="bg6" data-value="06"></li>
-        <li class="bg7" data-value="07"></li>
-        <li class="bg8" data-value="08"></li>
-        <li class="jpg9" data-value="09"></li>
-        <li class="jpg10" data-value="10"></li>
-        <li class="jpg11" data-value="11"></li>
-        <li class="jpg12" data-value="12"></li>
-        <li class="jpg13" data-value="13"></li>
-        <li class="jpg14" data-value="14"></li>
-    </ul>
-    <div class="clearfix spacing-10"></div>
-
-    <span class="sw-title">Main Colors:</span>
-    <ul id="tm-color">
-        <li class="color1"></li>
-        <li class="color2"></li>
-        <li class="color3"></li>
-        <li class="color4"></li>
-        <li class="color5"></li>
-        <li class="color6"></li>
-        <li class="color7"></li>
-        <li class="color8"></li>
-        <li class="color9"></li>
-        <li class="color10"></li>
-    </ul>
-</div>
 
 </body>
 </html>

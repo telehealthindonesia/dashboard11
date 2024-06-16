@@ -14,7 +14,6 @@
             </div>
         </div>
     </section>
-
     <!-- content begin -->
     <div id="content" class="no-padding">
 

@@ -50,17 +50,22 @@ use App\Http\Controllers\Web\ZoomMasterController;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//})->name('home');
-Route::get('/', [LandingController::class, 'home'])->name('landing.home')->middleware('guest');
-Route::get('/about', [LandingController::class, 'about'])->name('landing.about')->middleware('guest');
-Route::get('/vaccine', [LandingController::class, 'siglePage'])->name('landing.singlePage')->middleware('guest');
-Route::get('/contact', [LandingController::class, 'contact'])->name('landing.contact')->middleware('guest');
-Route::get('/product', [LandingController::class, 'product'])->name('landing.product')->middleware('guest');
-Route::get('/news', [LandingController::class, 'news'])->name('landing.news')->middleware('guest');
-Route::get('/faq', [LandingController::class, 'faq'])->name('landing.faq')->middleware('guest');
-Route::get('/remove', [LandingController::class, 'removeAllSession'])->name('landing.remove')->middleware('guest');
+Route::get('/baik', function () {
+    return view('welcome');
+})->name('home');
+Route::get('/', [LandingController::class, 'home'])->name('landing.home');
+Route::get('/about', [LandingController::class, 'about'])->name('landing.about');
+Route::get('/vaccine', [LandingController::class, 'siglePage'])->name('landing.singlePage');
+Route::get('/contact', [LandingController::class, 'contact'])->name('landing.contact');
+Route::get('/product', [LandingController::class, 'product'])->name('landing.product');
+Route::get('/news', [LandingController::class, 'news'])->name('landing.news');
+Route::get('/faq', [LandingController::class, 'faq'])->name('landing.faq');
+Route::get('/remove', [LandingController::class, 'removeAllSession'])->name('landing.remove');
+Route::get('/member', [LandingController::class, 'profile'])->name('landing.member')->middleware('auth');
+Route::get('/member/anggota', [LandingController::class, 'anggota'])->name('landing.member.anggota')->middleware('auth');
+Route::get('/member/transaksi', [LandingController::class, 'transaksi'])->name('landing.member.transaksi')->middleware('auth');
+Route::get('/member/file', [LandingController::class, 'file'])->name('landing.member.file')->middleware('auth');
+
 
 Route::get('/login/phone', [AuthController::class, 'login_phone'])->name('auth.login.phone')->middleware('guest');
 Route::post('/postLoginPhone', [AuthController::class, 'postLoginPhone'])->name('auth.postLoginPhone');
@@ -84,6 +89,7 @@ Route::post('profile', [ProfileController::class, 'update'])->name('profile.upda
 Route::post('profile/foto', [ProfileController::class, 'update_foto'])->name('profile.update.foto')->middleware('auth');
 Route::post('profile/organisasi', [ProfileController::class, 'update_orgnisasi'])->name('profile.update.organisasi')->middleware('auth');
 Route::get('/profile/{id}', [ProfileController::class, 'user'])->name('user.profile')->middleware('auth');
+//Route::get('/profile', [ProfileController::class, 'profile'])->name('home')->middleware('auth');
 
 //request otp untuk rest password
 Route::get('forgotPassword', [AuthController::class, 'forgotPassword'])->name('auth.forgotPassword')->middleware('guest');

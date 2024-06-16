@@ -2,8 +2,6 @@
 @section('content')
     <!-- content begin -->
     <div id="content" class="no-padding">
-
-
         <!-- section begin -->
         <section id="section-project" class="no-padding-top">
             <div class="container">
@@ -49,7 +47,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Related Project begin -->
         <section id="section-related-project" class="no-padding-top">
             <div class="container">
@@ -81,7 +78,6 @@
             </div>
         </section>
         <!-- Related Project close -->
-
     </div>
     <!-- content close -->
 @endsection
