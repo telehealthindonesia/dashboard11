@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "13d04051db667eeba00cd33542a7e5a3",
+    "content-hash": "bfe7da2edc87570a8df027d1a43796e6",
     "packages": [
         {
             "name": "brick/math",
@@ -1817,16 +1817,16 @@
         },
         {
             "name": "mongodb/laravel-mongodb",
-            "version": "4.4.1",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mongodb/laravel-mongodb.git",
-                "reference": "42f5a49013e894b8b45cf8a7ef02220c4bf11434"
+                "reference": "64d6dc05a8f08d9cf09f6b2d54f891a1692f6181"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mongodb/laravel-mongodb/zipball/42f5a49013e894b8b45cf8a7ef02220c4bf11434",
-                "reference": "42f5a49013e894b8b45cf8a7ef02220c4bf11434",
+                "url": "https://api.github.com/repos/mongodb/laravel-mongodb/zipball/64d6dc05a8f08d9cf09f6b2d54f891a1692f6181",
+                "reference": "64d6dc05a8f08d9cf09f6b2d54f891a1692f6181",
                 "shasum": ""
             },
             "require": {
@@ -1839,9 +1839,6 @@
                 "illuminate/support": "^10.0|^11",
                 "mongodb/mongodb": "^1.15",
                 "php": "^8.1"
-            },
-            "conflict": {
-                "illuminate/bus": "< 10.37.2"
             },
             "replace": {
                 "jenssegers/mongodb": "self.version"
@@ -1863,8 +1860,7 @@
                 "laravel": {
                     "providers": [
                         "MongoDB\\Laravel\\MongoDBServiceProvider",
-                        "MongoDB\\Laravel\\MongoDBQueueServiceProvider",
-                        "MongoDB\\Laravel\\MongoDBBusServiceProvider"
+                        "MongoDB\\Laravel\\MongoDBQueueServiceProvider"
                     ]
                 }
             },
@@ -1912,9 +1908,9 @@
             "support": {
                 "issues": "https://www.mongodb.com/support",
                 "security": "https://www.mongodb.com/security",
-                "source": "https://github.com/mongodb/laravel-mongodb/tree/4.4.1"
+                "source": "https://github.com/mongodb/laravel-mongodb/tree/4.3.0"
             },
-            "time": "2024-06-13T15:45:58+00:00"
+            "time": "2024-04-26T15:53:27+00:00"
         },
         {
             "name": "mongodb/mongodb",
