@@ -57,6 +57,7 @@ Route::get('/', [LandingController::class, 'home'])->name('landing.home')->middl
 Route::get('/about', [LandingController::class, 'about'])->name('landing.about')->middleware('guest');
 Route::get('/vaccine', [LandingController::class, 'siglePage'])->name('landing.singlePage')->middleware('guest');
 Route::get('/contact', [LandingController::class, 'contact'])->name('landing.contact')->middleware('guest');
+Route::get('/product', [LandingController::class, 'product'])->name('landing.product')->middleware('guest');
 Route::get('/news', [LandingController::class, 'news'])->name('landing.news')->middleware('guest');
 Route::get('/faq', [LandingController::class, 'faq'])->name('landing.faq')->middleware('guest');
 Route::get('/remove', [LandingController::class, 'removeAllSession'])->name('landing.remove')->middleware('guest');

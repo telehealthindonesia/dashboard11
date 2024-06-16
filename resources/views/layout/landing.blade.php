@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Compact - Multipurpose Corporate Business Website Template</title>
+    <title>RSPON Mahar Mardjono</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Favicons
     ================================================== -->
-    <link rel="icon" href="{{ asset('compact/images/favicon.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('compact/images/logo-kemenkes.png') }}" type="image/x-icon">
 
     <!-- LOAD CSS FILES -->
     <link href="{{ asset('compact/css/style.css') }}" rel="stylesheet" type="text/css">
@@ -41,10 +41,8 @@
                     <div class="col-md-12">
 
                         <!-- logo begin -->
-                        <div id="logo" class="pull-left">
-                            <a href="index.html">
-                                <img src="{{ asset('compact/images/logo.png') }}" alt="" class="logo">
-                            </a>
+                        <div id="logo-text" class="pull-left">
+                            <h4>RSPON Mahar Mardjono</h4>
                         </div>
                         <!-- logo close -->
 
@@ -62,10 +60,11 @@
                         <nav id="desktop-menu" class="site-desktop-menu hidden-xs hidden-sm">
                             <ul class="clearfix">
                                 <li><a href="{{ route('landing.home') }}">Home</a></li>
-                                <li><a href="{{ route('landing.about') }}">About</a></li>
-                                <li><a href="{{ route('landing.news') }}">Article</a></li>
+                                <li><a href="{{ route('landing.about') }}">Tentang Kami</a></li>
+                                <li><a href="{{ route('landing.product') }}">Produk</a></li>
+                                <li><a href="{{ route('landing.news') }}">Berita</a></li>
                                 <li><a href="{{ route('landing.faq') }}">FAQ</a></li>
-                                <li><a href="{{ route('landing.contact') }}">Contact Us</a></li>
+                                <li><a href="{{ route('landing.contact') }}">Hubungi Kami</a></li>
                             </ul>
                         </nav>
                         <!-- desktop menu close -->
@@ -161,13 +160,11 @@
             <h3>menu</h3><a id="btn-close-canvasmenu"><i class="fa fa-close"></i></a>
             <nav>
                 <ul class="clearfix">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="features.html">Features</a></li>
-                    <li><a href="pages.html">Pages</a></li>
-                    <li><a href="portfolio.html">Portfolios</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="{{ route('landing.home') }}">Home</a></li>
+                    <li><a href="{{ route('landing.about') }}">Tentang Kami</a></li>
+                    <li><a href="{{ route('landing.news') }}">Berita</a></li>
+                    <li><a href="{{ route('landing.faq') }}">FAQ</a></li>
+                    <li><a href="{{ route('landing.contact') }}">Hubungi Kami</a></li>
                 </ul>
             </nav>
         </div>
@@ -186,8 +183,8 @@
                     <div class="col-md-3">
                         <div class="compact-widget">
                             <div class="widget-inner">
-                                <img class="logo-footer" src="{{ asset('compact') }}/images/logo-footer.png" alt="compact company">
-                                <p>Compact is a clean PSD theme suitable for corporate, You can customize it very easy to fit your needs, semper suscipit metus accumsan at. Vestibulum et lacus urna. Nam luctus ac tortor eu</p>
+                                <img class="logo-footer" src="{{ asset('compact') }}/images/logo-rspon.png" alt="compact company" style="width: 100%">
+                                <p class="text-justify">RSPON Mahar Mardjono merukapakan satuan unit kerja Kementerian Kesehatan RI yang ditugaskan untuk memberikan pelayanan kekhususan kepada masayarakat untuk mengatasi masalah kesehatan yang berkaitan dengan penyakit otak dan persyarafan</p>
                                 <div class="social-icons clearfix">
                                     <a href="#" class="facebook" ><i class="fa fa-facebook"></i></a>
                                     <a href="#" class="twitter" ><i class="fa fa-twitter"></i></a>
@@ -204,11 +201,11 @@
                             <h3 class="widget-title">Features</h3>
                             <div class="widget-inner">
                                 <ul>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Our Story</a></li>
-                                    <li><a href="#">Term &amp; Conditions</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Sites Map</a></li>
+                                    <li><a href="#">Kemenkes</a></li>
+                                    <li><a href="#">RSPON Mahar Mardjono</a></li>
+                                    <li><a href="#">Articles</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">Hubungi Kami</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -218,10 +215,10 @@
                         <div class="compact-widget">
                             <h3 class="widget-title">Contact Us</h3>
                             <div class="widget-inner">
-                                <p>Address: 379 5th Ave  New York, NYC <br> 10018, United States</p>
-                                <p>Phone: +(112) 345 6879</p>
+                                <p>Jl. MT. Haryono Kavling 11, Cawang <br> Kota Jakarta Timur, DKI Jakarta</p>
+                                <p>Phone: 021-29373377</p>
                                 <p>Fax: +(112) 345 8796</p>
-                                <p>Email: contact@compact.com</p>
+                                <p>Email: info@rspon.co.id</p>
                             </div>
                         </div>
                     </div>
@@ -239,7 +236,7 @@
                             <h3 class="widget-title">Newsletter</h3>
                             <div class="widget-inner">
                                 <div class="newsletter newsletter-widget">
-                                    <p>{{ $myKey }}</p>
+                                    <p>Masukan email anda, jika ingin berlangngganan email seputar info kesehatan</p>
                                     <form action="" method="post">
                                         <p><input class="newsletter-email" type="email" name="email" placeholder="Your email"><i class="fa fa-envelope-o"></i></p>
                                         <p><input class="newsletter-submit" type="submit" value="Subscribe"></p>
@@ -259,7 +256,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        Copyright &copy; 2016 Designed by AuThemes. All rights reserved.
+                        Kementerian Kesehatan RI
                     </div>
                 </div>
             </div>
@@ -282,6 +279,8 @@
 <script src="{{ asset('compact/js/jquery.fitvids.js') }}"></script>
 <script src="{{ asset('compact/js/wow.min.js') }}"></script>
 <script src="{{ asset('compact/js/jquery.magnific-popup.min.js') }}"></script>
+
+
 
 <!-- Waypoints-->
 <script src="{{ asset('compact/js/jquery.waypoints.min.js') }}"></script>
@@ -328,12 +327,18 @@
 <script src="{{ asset('compact/js/smk-accordion.js') }}"></script>
 <script src="{{ asset('compact/js/custom-element.js') }}"></script>
 
+<!-- SLIDER REVOLUTION SCRIPTS  -->
+<script type="text/javascript" src="{{ asset('compact/rs-plugin/js/jquery.themepunch.plugins.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('compact/rs-plugin/js/jquery.themepunch.revolution.min.js') }}"></script>
+<script src="{{ asset('compact/js/revslider-custom.js') }}"></script>
+
+
 <script src="{{ asset('compact/switcher/demo.js') }}"></script>
 <div id="switcher">
     <span class="custom-close"></span>
     <span class="custom-show"></span>
 
-    <a class="btn btn-primary width" href="#">Buy Now</a>
+    <a class="btn btn-primary width" href="https://rspon.co.id">Buy Now</a>
 
     <div class="clearfix"></div>
 

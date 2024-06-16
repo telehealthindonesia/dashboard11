@@ -80,14 +80,18 @@ HEADER
 header.site-header {
   position: relative;
   background-color: #fff;
-  border-top: 5px solid #29b6f6;
+  border-top: 10px solid #29b6f6;
 }
 header.site-header-1 {
   min-height: 115px;
 }
-#logo {
-  margin-top: 25px;
+#logo-text {
+    margin-top: 45px;
 }
+#logo {
+    margin-top: 25px;
+}
+
 /*	site-desktop-menu	*/
 nav.site-desktop-menu {
   width: auto;
@@ -204,7 +208,10 @@ nav.site-desktop-menu > ul > li ul ul {
   border-top: 5px solid #29b6f6;
 }
 .site-header-1 .stuck #logo {
-  margin-top: 9px;
+  margin-top: 19px;
+}
+.site-header-1 .stuck #logo-text {
+    margin-top: 30px;
 }
 .site-header-1 .stuck nav.site-desktop-menu > ul > li > a {
   line-height: 80px;

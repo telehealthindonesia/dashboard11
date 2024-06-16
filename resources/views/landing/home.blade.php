@@ -15,12 +15,25 @@
                             <h2 class="box-title">Vaksinasi</h2>
                             <div class="tiny-border"></div>
                             <p>Poliklinik vaksinasi melayani imunisasi pada masyarakat luas, baik secara individu maupun secara kolektif di perusahaan, adapun jenis vaksin yang kami layani adalah :</p>
-                            <ul class="list-style-1">
-                                <li>Vaksin Meningitis</li>
-                                <li>Vaksin Influenza</li>
-                                <li>Vaksin Hepatitis B</li>
-                                <li>Vaksin HPV</li>
-                            </ul>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list-style-1">
+                                        <li>Vaksin Meningitis</li>
+                                        <li>Vaksin Influenza</li>
+                                        <li>Vaksin Hepatitis B</li>
+                                        <li>Vaksin HPV</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="project-list">
+                                        <li><strong>Hari :</strong> Jumat</li>
+                                        <li><strong>Lokasi:</strong> Lantai 2 Rawat Jalan</li>
+                                        <li><strong>Jam:</strong> 07.30 sd 14.00</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
                             <div class="divider-single"></div>
                             <a href="{{ route('landing.singlePage') }}" class="btn btn-primary btn-small">More</a>
                         </div>
@@ -58,9 +71,9 @@
                     <div class="col-md-12">
                         <div class="latest-projects clearfix">
                             <div class="latest-projects-intro">
-                                <h2 class="box-title">Latest Projects</h2>
+                                <h2 class="box-title">Our Product</h2>
                                 <div class="tiny-border-light"></div>
-                                <p>Pellentesque gravida diam orci, vitae venenatis est eleifend sed. Proin non pretium turpis</p>
+                                <p class="text-justify">Pelayanan vaksinasi yang dapat kami tawarkan baik secara individu maupun secara kolektif adalah sebagai berikut : </p>
                             </div>
                             <div class="latest-projects-wrapper">
                                 <div id="latest-projects-items" class="latest-projects-items">
