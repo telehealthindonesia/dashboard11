@@ -1183,6 +1183,31 @@ section,
   border-color: #29b6f6;
   background-color: #29b6f6;
 }
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-1 {
+    margin-bottom: 0.25rem;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-3 {
+    margin-bottom: 1rem;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-5 {
+    margin-bottom: 3rem;
+}
+
 /* #button Group
 ================================================== */
 .btn {
@@ -4275,5 +4300,7 @@ footer.footer-2 .sub-footer {
   h6 {
     font-size: 10px;
   }
+
+
 }
 /*# sourceMappingURL=style.css.map */

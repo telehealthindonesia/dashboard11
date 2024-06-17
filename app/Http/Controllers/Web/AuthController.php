@@ -468,9 +468,9 @@ class AuthController extends Controller
         session()->flash('success', "Anda berhasil logout");
         if($delete_token | $delete_session){
             Auth::logout();
-            return redirect()->route('auth.login');
+            return redirect()->route('login');
         }else{
-            return redirect()->route('auth.login');
+            return redirect()->route('login');
         }
     }
     private function sending_whatsapp($receiver, $message)

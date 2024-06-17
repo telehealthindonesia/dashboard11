@@ -85,7 +85,8 @@
                             @endif
                             <!-- Top Cart -->
                             <div class="cart-button">
-                                <a href="#" class="dropdown-toggle cart-contents" data-toggle="dropdown" ><i class="fa fa-shopping-bag"></i> <span class="mini-cart-counter">3</span></a>
+                                <a href="#" class="dropdown-toggle cart-contents" data-toggle="dropdown" >
+                                    <i class="fa fa-shopping-bag"></i> <span class="mini-cart-counter">3</span></a>
                                 <div class="dropdown-menu top_cart_list_product">
                                     <ul class="cart_list product_list_widget clearfix">
                                         <li class="mini_cart_item">

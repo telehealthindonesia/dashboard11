@@ -71,7 +71,7 @@ Route::get('/login/phone', [AuthController::class, 'login_phone'])->name('auth.l
 Route::post('/postLoginPhone', [AuthController::class, 'postLoginPhone'])->name('auth.postLoginPhone');
 Route::get('/login/phone/otp', [AuthController::class, 'login_phone_otp'])->name('auth.login.phone.otp')->middleware('guest');
 Route::post('/postLoginPhoneOtp', [AuthController::class, 'postLoginPhoneOtp'])->name('auth.postLoginPhoneOtp');
-Route::get('/login', [AuthController::class, 'login'])->name('auth.login')->middleware('guest');
+Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/postLogin', [AuthController::class, 'postLogin'])->name('auth.postLogin');
 Route::get('register', [AuthController::class, 'register'])->name('auth.register');
 Route::post('daftar', [AuthController::class, 'daftar'])->name('auth.daftar');

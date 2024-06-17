@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
@@ -30,15 +31,19 @@ class LandingController extends Controller
         $data =[
             'title'     => 'Member Area',
             'class'     => 'Member',
-            'sub_class' => 'Profile'
+            'sub_class' => 'Profile',
+            'user'      => Auth::user()
         ];
         return view('landing.member.profile', $data);
     }
     public function anggota(){
+        $family = User::where('family.id_induk', Auth::id())->get();
         $data =[
             'title'     => 'Member Area',
             'class'     => 'Member',
-            'sub_class' => 'Anggota'
+            'sub_class' => 'Anggota',
+            'user'      => Auth::user(),
+            'family'    => $family
         ];
         return view('landing.member.anggota', $data);
     }

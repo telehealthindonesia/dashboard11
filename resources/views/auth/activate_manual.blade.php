@@ -34,7 +34,7 @@
                     </div>
                 </form>
                 <hr>
-                <p class="mb-0"><a href="{{ route('auth.login') }}">Login</a></p>
+                <p class="mb-0"><a href="{{ route('login') }}">Login</a></p>
             </div>
 
         </div>

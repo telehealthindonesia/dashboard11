@@ -18,6 +18,28 @@
     <section class="shortcodes section-elements">
         <div class="container">
             @include('landing.member.menu.menu')
+            <div class="row">
+                <table class="table">
+                    <thead>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>NIK</th>
+                    <th>Gender</th>
+                    <th>Tanggal Lahir</th>
+                    </thead>
+                    <tbody>
+                    @foreach($family as $data)
+                    <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $data->nama['nama_depan'] }} {{ $data->nama['nama_belakang'] }}</td>
+                        <td>{{ $data->nik }}</td>
+                        <td>{{ $data->gender }}</td>
+                        <td>{{ $data->lahir['tanggal'] }}</td>
+                    </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
 
         </div>
     </section>
