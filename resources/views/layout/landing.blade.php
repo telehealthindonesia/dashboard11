@@ -17,6 +17,7 @@
     <!-- color scheme -->
     <link rel="stylesheet" href="{{ asset('compact/switcher/demo.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('compact/switcher/colors/blue.css') }}" type="text/css" id="colors">
+    <link rel="stylesheet" href="{{ asset('assets/css/modal.css') }}">
 </head>
 
 <body>
@@ -76,7 +77,7 @@
                             @endphp
                             @if(!empty($auth))
                             <div class="navright-button">
-                                <a href="{{ route('landing.member') }}"><i class="fa fa-user"></i></a>
+                                <a href="{{ route('member.profile') }}"><i class="fa fa-user"></i></a>
                             </div>
                             @else
                                 <div class="navright-button">
@@ -345,6 +346,7 @@
 <script type="text/javascript" src="{{ asset('compact/rs-plugin/js/jquery.themepunch.plugins.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('compact/rs-plugin/js/jquery.themepunch.revolution.min.js') }}"></script>
 <script src="{{ asset('compact/js/revslider-custom.js') }}"></script>
+
 
 
 </body>

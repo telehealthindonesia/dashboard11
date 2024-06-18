@@ -27,42 +27,7 @@ class LandingController extends Controller
     public function news(){
         return view('landing.news');
     }
-    public function profile(){
-        $data =[
-            'title'     => 'Member Area',
-            'class'     => 'Member',
-            'sub_class' => 'Profile',
-            'user'      => Auth::user()
-        ];
-        return view('landing.member.profile', $data);
-    }
-    public function anggota(){
-        $family = User::where('family.id_induk', Auth::id())->get();
-        $data =[
-            'title'     => 'Member Area',
-            'class'     => 'Member',
-            'sub_class' => 'Anggota',
-            'user'      => Auth::user(),
-            'family'    => $family
-        ];
-        return view('landing.member.anggota', $data);
-    }
-    public function transaksi(){
-        $data =[
-            'title'     => 'Member Area',
-            'class'     => 'Member',
-            'sub_class' => 'Transaksi'
-        ];
-        return view('landing.member.anggota', $data);
-    }
-    public function file(){
-        $data =[
-            'title'     => 'Member Area',
-            'class'     => 'Member',
-            'sub_class' => 'File'
-        ];
-        return view('landing.member.anggota', $data);
-    }
+
     public function faq(){
         return view('landing.faq');
     }

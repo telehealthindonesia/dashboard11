@@ -148,7 +148,7 @@ class AuthController extends Controller
             'password'        => 'required',
         ]);
         if ($validator->fails()) {
-            return redirect()->route('auth.login')
+            return redirect()->route('ogin')
                 ->withErrors($validator)
                 ->withInput();
         }
@@ -182,7 +182,7 @@ class AuthController extends Controller
             return redirect()->route('profile.index');
         }else{
             session()->flash('danger', 'Wrong username or password');
-            return redirect()->route('auth.login')->withInput();
+            return redirect()->route('login')->withInput();
         }
     }
     public function register()

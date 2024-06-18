@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Web\LandingController;
+use App\Http\Controllers\Web\MemberController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Web\AdmissionController;
@@ -61,10 +62,13 @@ Route::get('/product', [LandingController::class, 'product'])->name('landing.pro
 Route::get('/news', [LandingController::class, 'news'])->name('landing.news');
 Route::get('/faq', [LandingController::class, 'faq'])->name('landing.faq');
 Route::get('/remove', [LandingController::class, 'removeAllSession'])->name('landing.remove');
-Route::get('/member', [LandingController::class, 'profile'])->name('landing.member')->middleware('auth');
-Route::get('/member/anggota', [LandingController::class, 'anggota'])->name('landing.member.anggota')->middleware('auth');
-Route::get('/member/transaksi', [LandingController::class, 'transaksi'])->name('landing.member.transaksi')->middleware('auth');
-Route::get('/member/file', [LandingController::class, 'file'])->name('landing.member.file')->middleware('auth');
+
+//member
+Route::get('/member/registration', [MemberController::class, 'registration'])->name('member.registration');
+Route::post('/member/registration', [MemberController::class, 'register'])->name('member.register');
+Route::get('/member/profile', [MemberController::class, 'profile'])->name('member.profile')->middleware('auth');
+Route::get('/member/transaksi', [MemberController::class, 'transaksi'])->name('member.transaksi')->middleware('auth');
+Route::get('/member/file', [MemberController::class, 'file'])->name('member.file')->middleware('auth');
 
 
 Route::get('/login/phone', [AuthController::class, 'login_phone'])->name('auth.login.phone')->middleware('guest');
@@ -247,6 +251,8 @@ Route::post('timeLine/queue/{id}', [\App\Http\Controllers\Web\TimeLineController
 Route::get('baseLine', [BaseLineController::class, 'index'])->name('baseLine.index')->middleware('auth');
 
 Route::get('files', [FileController::class, 'index'])->name('file.index')->middleware('auth');
+Route::get('files/mine', [FileController::class, 'mine'])->name('file.mine')->middleware('auth');
+Route::post('files', [FileController::class, 'store'])->name('file.store')->middleware('auth');
 
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index')->middleware('auth');
 Route::get('dashboard/customer', [DashboardController::class, 'customer'])->name('dashboard.customer')->middleware('auth');
