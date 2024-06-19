@@ -69,6 +69,9 @@ Route::post('/member/registration', [MemberController::class, 'register'])->name
 Route::get('/member/profile', [MemberController::class, 'profile'])->name('member.profile')->middleware('auth');
 Route::get('/member/transaksi', [MemberController::class, 'transaksi'])->name('member.transaksi')->middleware('auth');
 Route::get('/member/file', [MemberController::class, 'file'])->name('member.file')->middleware('auth');
+Route::get('/member/login', [MemberController::class, 'login'])->name('member.login')->middleware('guest');
+Route::post('/member/login', [MemberController::class, 'doLogin'])->name('member.doLogin')->middleware('guest');
+Route::get('/member/newAccount', [MemberController::class, 'newAccount'])->name('member.newAccount')->middleware('guest');
 
 
 Route::get('/login/phone', [AuthController::class, 'login_phone'])->name('auth.login.phone')->middleware('guest');

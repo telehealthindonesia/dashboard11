@@ -16,7 +16,16 @@ class LandingController extends Controller
         return view('landing.about');
     }
     public function siglePage(){
-        return view('landing.single-page');
+        $family = User::where('family.id_induk', Auth::id())->get();
+        $user   = Auth::user();
+        $data =[
+            'title'     => 'Pendaftaran Vaksin',
+            'class'     => 'Booking',
+            'sub_class' => 'Vaccine',
+            'user'      => $user,
+            'family'    => $family
+        ];
+        return view('landing.single-page', $data);
     }
     public function contact(){
         return view('landing.contact');

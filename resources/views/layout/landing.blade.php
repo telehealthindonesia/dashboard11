@@ -81,7 +81,7 @@
                             </div>
                             @else
                                 <div class="navright-button">
-                                    <a href="{{ route('auth.login') }}"><i class="fa fa-lock"></i></a>
+                                    <a href="{{ route('login') }}"><i class="fa fa-lock"></i></a>
                                 </div>
                             @endif
                             <!-- Top Cart -->

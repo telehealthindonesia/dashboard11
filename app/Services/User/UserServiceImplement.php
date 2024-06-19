@@ -2,6 +2,7 @@
 
 namespace App\Services\User;
 
+use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use LaravelEasyRepository\ServiceApi;
@@ -92,6 +93,21 @@ class UserServiceImplement extends ServiceApi implements UserService{
             Log::debug($exception->getMessage());
             return [];
         }
+    }
+    public function sendingWhatsapp($receiver, $message)
+    {
+        $url_sending_wa = "https://wa.atm-sehat.com/send";
+        $header         = [];
+        $client         = new Client();
+        $sending        = $client->post($url_sending_wa, [
+            'headers' => $header,
+            'form_params'   => [
+                'number'    => '6281213798746',
+                'message'   => $message,
+                'to'        => '62'.(int) $receiver,
+                'type'      => 'chat'
+            ]
+        ]);
     }
     public function updateUser($request, $user){
         $data_user = [
