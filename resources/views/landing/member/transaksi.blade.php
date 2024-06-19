@@ -6,9 +6,9 @@
                 <div class="col-md-12">
                     <h1>Member</h1>
                     <ul class="breadcrumbs">
-                        <li><a href="{{ route('landing.home') }}">Home</a></li>
+                        <li><a href="{{ route('landing.home') }}">{{ $class }}</a></li>
                         <b>/</b>
-                        <li class="active">Member</li>
+                        <li class="active">{{ $sub_class }}</li>
                     </ul>
                 </div>
             </div>

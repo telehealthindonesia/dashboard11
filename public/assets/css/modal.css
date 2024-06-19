@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
 }
 .btn-small {
-    background-color: #4CAF50;
+    background-color: #2fdbf3;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -11,7 +11,7 @@ body {
     border-radius: 10px;
 }
 .btn-small:hover {
-    background-color: #32c9e0;
+    background-color: #32e089;
 }
 
 

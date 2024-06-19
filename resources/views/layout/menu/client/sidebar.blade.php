@@ -62,6 +62,12 @@ $foto = \Illuminate\Support\Facades\Auth::user()['foto']
                         <p>MyProject</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('faq.corporate', ['corporate_id'=>Auth::user()['organisasi']['id']]) }}" class="nav-link">
+                        <i class="nav-icon fas fa-calculator"></i>
+                        <p>FAQ</p>
+                    </a>
+                </li>
 
                 <li class="nav-item">
                     <a href="{{ route('auth.logout') }}" class="nav-link">

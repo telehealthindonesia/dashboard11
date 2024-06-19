@@ -312,3 +312,8 @@ Route::get('/role/{id}/create', [RoleController::class, 'create'])->name('role.c
 Route::get('/role/{role_id}/create/{user_id}/user', [RoleController::class, 'search_customer'])->name('role.search_customer')->middleware('auth');
 Route::post('/roles', [RoleController::class, 'store'])->name('role.store')->middleware('auth');
 Route::get('/roles/mine', [RoleController::class, 'mine'])->name('role.mine')->middleware('auth');
+
+//FAQ
+Route::get('/client/faq/corporate/{corporate_id}', [\App\Http\Controllers\Web\FaqController::class, 'corporate'])->name('faq.corporate')->middleware('auth');
+Route::post('/client/faq/store/{corporate_id}', [\App\Http\Controllers\Web\FaqController::class, 'store'])->name('faq.store')->middleware('auth');
+Route::put('/client/faq/store/{faq_id}', [\App\Http\Controllers\Web\FaqController::class, 'update'])->name('faq.update')->middleware('auth');

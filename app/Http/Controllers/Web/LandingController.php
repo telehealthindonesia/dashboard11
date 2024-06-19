@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Faq;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -38,7 +39,16 @@ class LandingController extends Controller
     }
 
     public function faq(){
-        return view('landing.faq');
+        $customer_id    = env('CUSTOMER_ID');
+        $faq            = Faq::where('corporate_id', $customer_id)->get();
+        $user           = Auth::user();
+        $data =[
+            'title'     => 'Pendaftaran Vaksin',
+            'class'     => 'Booking',
+            'sub_class' => 'Vaccine',
+            'faq'       => $faq,
+        ];
+        return view('landing.faq', $data);
     }
     public function removeAllSession(){
         Session::forget('myKey');

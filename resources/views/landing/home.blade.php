@@ -35,7 +35,7 @@
                             </div>
 
                             <div class="divider-single"></div>
-                            <a href="{{ route('landing.singlePage') }}" class="btn btn-primary btn-small">More</a>
+                            <a href="{{ route('landing.singlePage') }}" class="btn btn-primary">More</a>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4">
