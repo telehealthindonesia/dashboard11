@@ -14,6 +14,14 @@
         </div>
     </div>
     <div class="row mb-1">
+        <div class="col-md-4">
+            <label>Tanggal</label>
+        </div>
+        <div class="col-md-8">
+            <input type="date" class="form-control" name="tanggal">
+        </div>
+    </div>
+    <div class="row mb-1">
         <table class="table">
             <thead>
             <th>#</th>
