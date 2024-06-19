@@ -5,7 +5,7 @@
                 <h4 @if($sub_class == "Profile") class="active" @endif><a href="{{ route('member.profile') }}">Profile</a></h4>
                 <h4 @if($sub_class == "Transaksi") class="active" @endif><a href="{{ route('member.transaksi') }}">Riwayat Transaksi</a></h4>
                 <h4 @if($sub_class == "File") class="active" @endif><a href="{{ route('member.file') }}">File</a></h4>
-                <h4><a href="{{ route('auth.logout') }}">Logout</a></h4>
+                <h4><a href="{{ route('member.logout') }}">Logout</a></h4>
             </header>
 
         </div>

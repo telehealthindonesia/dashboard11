@@ -15,21 +15,32 @@
                     <div class="col-md-4">
                         <div class="project-info">
                             <h2 class="box-title">Login</h2>
-                            <form action="{{ route('member.auth', ['id'=>$user->id]) }}" method="post">
+                            @if(session('danger') != null)
+                                <div class="alert alert-danger">
+                                    <b>{{ session('danger') }}</b>
+                                </div>
+                            @endif
+                            <form action="{{ route('member.doLogin') }}" method="post">
                                 @csrf
                                 <div class="row mb-1">
-                                    <div class="col-md-12">
-                                        <p class="text-justify">Hai {{ $user->nama['nama_depan'] }} {{ $user->nama['nama_belakang'] }}, silahkan masukkan OTP yang telah kami kirimkan melalui email : {{ $user->kontak['email'] }} dan melalui Whatsapp : {{ $user->kontak['nomor_telepon'] }}</p>
+                                    <div class="col-md-4">
+                                        <label>NIK</label>
                                     </div>
-
-                                </div>
-                                <div class="row mb-1 text-center">
-                                    <div class="col-md-12 text-center">
-                                        <input type="text" class="form-control" required name="otp">
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" required name="nik" value="{{ old('nik') }}">
                                     </div>
                                 </div>
 
-                                <div class="row margin-top-20">
+                                <div class="row mb-1">
+                                    <div class="col-md-4">
+                                        <label>Tanggal Lahir</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="date" class="form-control" required name="tanggal_lahir" value="{{ old('tanggal_lahir') }}">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-1 margin-top-20">
                                     <div class="col-md-12 text-center">
                                         <button type="submit" class="btn btn-primary">Login</button>
                                     </div>
@@ -37,9 +48,6 @@
                                         <a href="">OR</a>
                                     </div>
                                     <div class="col-md-12 text-center margin-top-20">
-                                        <a href="{{ route('member.newAccount') }}">Request OTP</a>
-                                    </div>
-                                    <div class="col-md-12 text-center">
                                         <a href="{{ route('member.newAccount') }}">Create New Member</a>
                                     </div>
                                 </div>

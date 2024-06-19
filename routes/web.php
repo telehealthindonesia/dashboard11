@@ -71,7 +71,9 @@ Route::get('/member/transaksi', [MemberController::class, 'transaksi'])->name('m
 Route::get('/member/file', [MemberController::class, 'file'])->name('member.file')->middleware('auth');
 Route::get('/member/login', [MemberController::class, 'login'])->name('member.login')->middleware('guest');
 Route::post('/member/login', [MemberController::class, 'doLogin'])->name('member.doLogin')->middleware('guest');
+Route::post('/member/auth/{id}', [MemberController::class, 'auth'])->name('member.auth')->middleware('guest');
 Route::get('/member/newAccount', [MemberController::class, 'newAccount'])->name('member.newAccount')->middleware('guest');
+Route::get('/member/logout', [MemberController::class, 'logout'])->name('member.logout')->middleware('auth');
 
 
 Route::get('/login/phone', [AuthController::class, 'login_phone'])->name('auth.login.phone')->middleware('guest');

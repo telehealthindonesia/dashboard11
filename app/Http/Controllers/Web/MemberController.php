@@ -90,7 +90,7 @@ class MemberController extends Controller
             'sub_class' => 'Login',
             'product'   => $product,
         ];
-        return view('landing.auth.login', $data);
+        return view('landing.auth.request_otp', $data);
     }
     public function doLogin(Request $request){
         $nik            = (int) $request->nik;
@@ -100,45 +100,98 @@ class MemberController extends Controller
         $exp            = time()+(24*60*60);
         $date_exp       = date('Y-m-d H:i', $exp);
         $message        = "OTP : $otp, exp: $date_exp";
-        $input = [
-            'nama'      => [
-                'nama_depan'    => $user->nama['nama_depan'],
-                'nama_belakang' => $user->nama['nama_belakang']
-            ],
-            'gender'            => $user->gender,
-            'nik'               => (int) $user->nik,
-            'lahir'     => [
-                'tempat'    => $user->lahir['tempat'],
-                'tanggal'   => $user->lahir['tanggal']
-            ],
-            'kontak'    => [
-                'email'         => $user->kontak['email'],
-                'nomor_telepon' => $user->kontak['nomor_telepon']
-            ],
-            'username'  => $user->username,
-            'password'  => $user->password,
-            'aktifasi'  => [
-                'otp'   => $otp,
-                'exp'   => $exp
-            ],
-            'family'    => $request->family,
+        $product        = ['a', 'b'];
+        if(empty($user)){
+            return back()->with('danger', 'Pasien tidak ditemukan')->withInput();
+        }elseif ($user->aktifasi != null){
+            $input          = [
+                'nama'      => [
+                    'nama_depan'    => $user->nama['nama_depan'],
+                    'nama_belakang' => $user->nama['nama_belakang']
+                ],
+                'gender'            => $user->gender,
+                'nik'               => (int) $user->nik,
+                'lahir'     => [
+                    'tempat'    => $user->lahir['tempat'],
+                    'tanggal'   => $user->lahir['tanggal']
+                ],
+                'kontak'    => [
+                    'email'         => $user->kontak['email'],
+                    'nomor_telepon' => $user->kontak['nomor_telepon']
+                ],
+                'username'  => $user->username,
+                'password'  => $user->password,
+                'aktifasi'  => [
+                    'otp'   => $otp,
+                    'exp'   => $exp
+                ],
+                'family'    => $request->family,
 
-        ];
-
-        if($user->kontak != null){
-            if($user->kontak['email'] != null){
-                dispatch(new RegisterUserNotificationJob(recipient: $user->kontak['email'], data: $input));
-            }elseif($user->kontak['nomor_telepon'] != null){
-                $receiver       = $user->kontak['nomor_telepon'];
-                $sending        = $this->userService->sendingWhatsapp($receiver, $message);
-
+            ];
+            if($user->aktifasi['exp'] > time()){
+                $data =[
+                    'title'     => 'Login',
+                    'class'     => 'Member',
+                    'sub_class' => 'Login',
+                    'product'   => $product,
+                    'user'      => $user
+                ];
+                return view('landing.auth.login', $data);
             }else{
-                dd('nomor HP kosong');
+                $update_otp     = $user->update([
+                    'aktifasi'=>[
+                        'otp'   => $otp,
+                        'exp'   => $exp
+                    ]]);
+                if($update_otp){
+                    if($user->kontak != null){
+                        if($user->kontak['email'] != null){
+                            dispatch(new RegisterUserNotificationJob(recipient: $user->kontak['email'], data: $input));
+                        }
+                        if($user->kontak['nomor_telepon'] != null){
+                            $receiver       = $user->kontak['nomor_telepon'];
+                            $sending        = $this->userService->sendingWhatsapp($receiver, $message);
+                            $data =[
+                                'title'     => 'Login',
+                                'class'     => 'Member',
+                                'sub_class' => 'Login',
+                                'product'   => $product,
+                                'user'      => $user
+                            ];
+                            return view('landing.auth.login', $data);
+
+                        }else{
+                            dd('nomor HP kosong');
+                        }
+                    }else{
+                        dd('Kontak blm diisi');
+                    }
+                }else{
+                    dd('OTP gagal dibuat');
+                }
+            }
+        }
+    }
+    public function auth(Request $request, $id){
+        $user       = User::find($id);
+        $otp        = $request->otp;
+        $otp_db     = $user->aktifasi['otp'];
+        $exp_otp    = $user->aktifasi['exp'];
+        $now        = time();
+        if($exp_otp>$now){
+            if($otp != $otp_db){
+                return back()->with('danger', 'OTP Salah');
+            }else{
+                Auth::login($user);
+                return redirect()->route('member.profile');
             }
         }else{
-            dd('Kontak blm diisi');
+            return back()->with('danger', 'OTP Kadaluarsa');
         }
-
+    }
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('member.login')->with('success', 'Anda berhasil logout');
     }
     public function newAccount(){
         $product        = ['a', 'b'];
