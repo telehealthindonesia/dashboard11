@@ -317,3 +317,10 @@ Route::get('/roles/mine', [RoleController::class, 'mine'])->name('role.mine')->m
 Route::get('/client/faq/corporate/{corporate_id}', [\App\Http\Controllers\Web\FaqController::class, 'corporate'])->name('faq.corporate')->middleware('auth');
 Route::post('/client/faq/store/{corporate_id}', [\App\Http\Controllers\Web\FaqController::class, 'store'])->name('faq.store')->middleware('auth');
 Route::put('/client/faq/store/{faq_id}', [\App\Http\Controllers\Web\FaqController::class, 'update'])->name('faq.update')->middleware('auth');
+
+//Schedule
+Route::get('/schedules', [\App\Http\Controllers\Web\ScheduleController::class, 'index'])->name('schedule.index')->middleware('auth');
+Route::get('/schedules/{customer_id}/customer', [\App\Http\Controllers\Web\ScheduleController::class, 'customer'])->name('schedule.customer')->middleware('auth');
+Route::post('/schedules', [\App\Http\Controllers\Web\ScheduleController::class, 'store'])->name('schedule.store')->middleware('auth');
+Route::post('/schedules/{customer_id}/customer', [\App\Http\Controllers\Web\ScheduleController::class, 'store_customer'])->name('schedule.store.customer')->middleware('auth');
+Route::get('/schedules/{id}/show', [\App\Http\Controllers\Web\ScheduleController::class, 'show'])->name('schedule.show')->middleware('auth');
