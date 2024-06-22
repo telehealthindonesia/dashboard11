@@ -21,7 +21,9 @@
             <h6>A. Identitas Utama</h6>
             <div class="row">
                 <div class="col-md-6">
-                    <a href="#" class="btn btn-success mb-2">Edit</a>
+
+                    @if($edit != true )
+                        <a href="?edit=true" class="btn btn-small mb-2">Edit</a>
                     <table class="table">
                         <tr>
                             <td>Nama</td>
@@ -51,11 +53,17 @@
                             </td>
                         </tr>
                     </table>
-
+                    @else
+                        @include('landing.member.edit')
+                    @endif
                 </div>
 
             </div>
             <h6>B. Identitas Anggota Keluarga</h6>
+            @if($family_edit == true)
+                @include('landing.member.edit')
+
+            @else
             <div class="row">
                 <div class="col-md-12">
                     <button id="openModalBtn" class="btn-small mb-2">New Family</button>
@@ -177,7 +185,9 @@
                         <th>NIK</th>
                         <th>Gender</th>
                         <th>Tanggal Lahir</th>
+                        <th>Edit</th>
                         </thead>
+{{--                        082146496067 Eva Suasta Sales Inchage--}}
                         <tbody>
                         @foreach($family as $data)
                             <tr>
@@ -186,6 +196,9 @@
                                 <td>{{ $data->nik }}</td>
                                 <td>{{ $data->gender }}</td>
                                 <td>{{ $data->lahir['tanggal'] }}</td>
+                                <td>
+                                    <a href="?id={{ $data->id }}" class="btn btn-small">Edit</a>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -193,6 +206,7 @@
                 </div>
 
             </div>
+            @endif
 
         </div>
     </section>

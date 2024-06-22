@@ -51,14 +51,41 @@ class MemberController extends Controller
             return back()->with('danger', 'Data Gagal ditambahkan, karena NIK sudah pernah didaftarkan')->withInput();
         }
     }
-    public function profile(){
+    public function profile(Request $request){
+
+        if($request->edit == true){
+            $user = Auth::user();
+            $edit = true;
+            $user_edit = $user;
+            $family_edit = false;
+        }else{
+            $edit = false;
+            if($request->id != null){
+                $user_id = $request->id;
+                $family_member = User::find($user_id);
+                if($family_member != null){
+                    $family_edit = true;
+                    $user_edit = $family_member;
+                }else{
+                    $family_edit = false;
+                    $user_edit = null;
+                }
+            }else{
+                $family_edit = false;
+                $user_edit = null;
+            }
+        }
+
         $family = User::where('family.id_induk', Auth::id())->get();
         $data =[
-            'title'     => 'Member Area',
-            'class'     => 'Member',
-            'sub_class' => 'Profile',
-            'user'      => Auth::user(),
-            'family'    => $family
+            'title'         => 'Member Area',
+            'class'         => 'Member',
+            'sub_class'     => 'Profile',
+            'user'          => Auth::user(),
+            'family'        => $family,
+            'edit'          => $edit,
+            'user_edit'     => $user_edit,
+            'family_edit'   => $family_edit
         ];
         return view('landing.member.profile', $data);
     }
