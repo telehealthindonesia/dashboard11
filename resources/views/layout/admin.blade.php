@@ -22,6 +22,8 @@
           href="https://adminlte.io/themes/v3/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="https://adminlte.io/themes/v3/dist/css/adminlte.min.css">
+
+
 </head>
 
 <body class="hold-transition sidebar-mini">

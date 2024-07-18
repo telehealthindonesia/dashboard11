@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Models\Faq;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -32,7 +33,14 @@ class LandingController extends Controller
         return view('landing.contact');
     }
     public function product(){
-        return view('landing.product');
+        $products = Product::all();
+        $data = [
+            'title'     => 'Our Product',
+            'class'     => 'Product',
+            'sub_class' => 'Vaccine',
+            'products'  => $products,
+        ];
+        return view('landing.product', $data);
     }
     public function news(){
         return view('landing.news');

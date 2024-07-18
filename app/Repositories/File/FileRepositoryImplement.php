@@ -18,6 +18,11 @@ class FileRepositoryImplement extends Eloquent implements FileRepository{
     {
         $this->model = $model;
     }
+    public function store($data){
+        $store = $this->model->create($data);
+        return $store;
+    }
+
 
     // Write something awesome :)
 }

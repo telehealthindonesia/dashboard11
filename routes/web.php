@@ -91,6 +91,14 @@ Route::post('activate', [AuthController::class, 'do_activate'])->name('auth.do_a
 Route::get('newOTP', [AuthController::class, 'new_otp'])->name('auth.new_otp');
 Route::post('newOTP', [AuthController::class, 'create_new_otp'])->name('auth.create.new_otp');
 
+//admin area
+Route::get('/admin/products', [\App\Http\Controllers\Web\ProductController::class, 'index'])->name('admin.product.index')->middleware('auth');
+Route::get('/admin/product/create', [\App\Http\Controllers\Web\ProductController::class, 'create'])->name('admin.product.create')->middleware('auth');
+Route::post('/admin/products', [\App\Http\Controllers\Web\ProductController::class, 'store'])->name('admin.product.store')->middleware('auth');
+Route::get('/admin/product/{id}/edit', [\App\Http\Controllers\Web\ProductController::class, 'edit'])->name('admin.product.edit')->middleware('auth');
+Route::put('/admin/product/{id}/update', [\App\Http\Controllers\Web\ProductController::class, 'update'])->name('admin.product.update')->middleware('auth');
+
+
 //profile
 Route::get('profile', [ProfileController::class, 'profile'])->name('profile.index')->middleware('auth');
 Route::get('profile/edit', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth');

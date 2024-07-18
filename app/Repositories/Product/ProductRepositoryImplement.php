@@ -18,6 +18,23 @@ class ProductRepositoryImplement extends Eloquent implements ProductRepository{
     {
         $this->model = $model;
     }
+    public function index(){
+        $products = $this->model->get();
+        return $products;
+    }
+    public function show($id){
+        $product = $this->model->where('_id', $id)->first();
+        return $product;
+    }
+    public function ubah($id, array $data){
+        $product = $this->model->where('_id', $id)->first();
+        $update = $product->update($data);
+        return $update;
+    }
+    public function store(array $data){
+        $create = $this->model->create($data);
+        return $create;
+    }
 
     // Write something awesome :)
 }

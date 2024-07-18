@@ -23,14 +23,14 @@
                 <div class="row">
 
                     <div id="projects-grid" class="projects-boxes">
-                        @for($i=1; $i<7; $i++)
+                        @foreach($products as $data)
                         <div class="project-item col-md-4 col-sm-6 business">
                             <div class="project-item-inner">
-                                <a href=""><img src="{{ asset('compact') }}/images/projects/small-1.jpg" alt="" class="img-responsive"></a>
-                                <h4>Vaksin</h4>
+                                <a href=""><img src="{{ $data->image }}" alt="" class="img-responsive"></a>
+                                <h4>{{ $data->title }}</h4>
                             </div>
                         </div>
-                        @endfor
+                        @endforeach
                     </div>
                 </div>
             </div>
